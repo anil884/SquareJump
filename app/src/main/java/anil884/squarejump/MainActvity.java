@@ -26,26 +26,13 @@ public class MainActvity extends AppCompatActivity {
     }
 
     public void Jump(View view){
-        System.out.println("Coming Here2");
+        //System.out.println("Coming Here2");
         ImageView sq= (ImageView)findViewById(R.id.imageView);
-        /*Animation sqjump =
-                AnimationUtils.loadAnimation(getApplicationContext(),
-                        R.anim.sjump);*/
-        ObjectAnimator up = ObjectAnimator.ofFloat(sq, "translationY",0f, -500.0f, 0f);
-        //up.setFillAfter(true);
-        //up.setInterpolator(new BounceInterpolator());
-        up.setDuration(1500);
-        up.start();
-        //up.setRepeatMode(2);
-        //sq.startAnimation(up);
-        /*
-        Animation down = new TranslateAnimation(
-                Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF, 0.0f,
-                Animation.RELATIVE_TO_SELF, -3.0f, Animation.RELATIVE_TO_SELF, 0.0f
-        );
-        down.setFillAfter(true);
-        down.setDuration(1000);
 
-        sq.startAnimation(down);*/
+        ObjectAnimator jump = ObjectAnimator.ofFloat(sq, "translationY",0f, -500.0f, 0f);
+        jump.setInterpolator(new BounceInterpolator());
+        jump.setDuration(2000);
+        jump.start();
+
     }
 }
